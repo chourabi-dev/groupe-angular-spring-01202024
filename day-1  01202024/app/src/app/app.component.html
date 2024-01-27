@@ -1,0 +1,95 @@
+<h1>Hello world</h1>
+<p>
+  Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatibus ducimus earum corporis qui molestias corrupti. Consequuntur sequi doloremque, veritatis quam fugit laudantium vero non, sapiente distinctio optio quibusdam repudiandae nihil.
+</p>
+
+
+<p>
+  email :  {{ email }}
+</p>
+
+<p>
+  username : {{ username }}
+</p>
+
+<p>
+  year :  {{ year }}
+</p>
+
+<p>
+  date : {{ date }}
+</p>
+
+<p>
+  access : {{ access }}
+</p>
+
+<p>
+  user: <br>
+  {{ user.username }} <br>
+  {{ user.email }}
+</p>
+
+
+<p>
+  employees: {{ employees }}
+</p>
+
+
+<h3>Employees:</h3>
+<ul>
+
+  <li  *ngFor="let e of employees"  >
+      {{ e }}  
+  </li>
+
+</ul>
+
+
+<h3>
+  Products
+</h3>
+
+<table class="table">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Product</th>
+        <th>Price</th>
+        <th>Quantity</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let p of products">
+        <td>
+          {{ p.id }}
+        </td>
+        <td>
+          <!-- TO EDIT HTML ATTRIBUTES WE USE [] -->
+          
+         <span class="police"   [ngClass]=" p.quantity == 0 ? 'text-danger' : 'text-success' "   > {{ p.product }}</span>
+        </td>
+        <td>
+          {{ p.price }}
+        </td>
+        <td>
+          <span *ngIf=" p.quantity != 0 " >{{ p.quantity }}</span>
+          
+          <span  *ngIf=" p.quantity == 0 " class="text-danger">out of stock</span>
+          
+
+          <span *ngIf="p.quantity != 0; then  success else failure  "></span>
+
+          <ng-template #success >{{ p.quantity }}</ng-template>
+
+          <ng-template #failure><span class="text-danger">out of stock</span></ng-template>
+
+         
+         
+
+
+        </td>
+        
+      </tr>
+    </tbody>
+</table>

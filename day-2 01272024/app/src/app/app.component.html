@@ -1,0 +1,82 @@
+<!--<div>
+  <img [src]="  currentURL  " width="500px" alt="">
+
+</div>
+<div>
+  <button (click)="previous()"  >previous</button>
+  <button  (click)="next()"  >next</button>
+</div>-->
+
+
+<!-- APP 2-->
+
+<!--
+
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-sm-6">
+      <div class="card">
+        <div class="card-header">
+          <h3>List todo</h3>
+        </div>
+        <div class="card-body">
+          <ul>
+            <li *ngFor="let t of todos; let i = index;">
+              <p>
+               {{ t.todo }}
+              </p>
+              <p>
+                <small> 
+                  {{ t.date |  date:'medium' }}
+                </small>
+              </p>
+              <button class="btn btn-danger" (click)="deleteTodo( i )">delete</button>
+            </li>
+          </ul>
+        </div>
+        <div class="card-footer">
+          <div class="">
+            <div>
+              <input (keyup)="typing($event)" type="text" class="form-control w-100">
+            </div>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>-->
+
+
+
+
+<!--default pipes
+<p>
+   {{ 154121511644 | number }}
+</p>
+
+<p>
+  {{ 1523668 | currency:'TND' }}
+</p>
+
+<p>
+  {{ 'azerty' | uppercase }}
+</p>
+
+<p>
+  {{ 'ZERTYU' | lowercase }}
+</p>
+
+<h3>{{ 'this is exmple title' | titlecase }}</h3>
+
+
+
+tchourabi@gmail.com  =>  t**************@gmail.com
+
+
+-->
+
+
+<p>
+  {{ 'tchourabi@gmail.com' | email:1:15:'bonjour' }}
+</p>
