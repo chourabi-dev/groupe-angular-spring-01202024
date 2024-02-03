@@ -1,0 +1,15 @@
+<div class="container mt-5">
+
+
+    <div *ngFor="let a   of articles">
+         
+        <app-article  
+        [id]=" a.id " 
+         [title]="a.title"  
+         [content]="a.content"  
+         [likes]="a.nbrLikes"   ></app-article>
+    </div>
+
+    
+
+</div>

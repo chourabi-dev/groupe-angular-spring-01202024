@@ -1,0 +1,41 @@
+<div class="container mt-5">
+
+
+    <div class="row justify-content-center">
+        <div class="col-sm-8">
+            <div class="card">
+                <div class="card-body">
+                    
+                    <form [formGroup]="form" (ngSubmit)="submit()" >
+                        <div class="mb-3">
+                            <label for="">Username
+                                <span class="text-danger"  
+                                *ngIf=" form.controls.username.valid == false "  >*</span>
+                            </label>
+                            <input type="text" class="form-control" formControlName="username">
+                        </div>
+                        <div class="mb-3">
+                            <label for="">Password</label>
+                            <input type="password" class="form-control" 
+                            [ngClass]=" form.controls.password.valid == false ? 'is-invalid': 'is-valid' "               formControlName="password">
+                            <p>
+                                <small class="text-danger" 
+                                *ngIf="form.controls.password.valid == false">This feild is required</small>
+                            </p>
+                        </div>
+                        <div class="mb-3">
+                           <button class="btn btn-primary w-100 text-center" type="submit" [disabled]="! form.valid" >Login</button>
+                        </div>
+
+
+                        <p>
+                            {{ form.valid }}
+                        </p>
+                        
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

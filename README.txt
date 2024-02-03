@@ -33,3 +33,17 @@ npm i bootstrap
 ng g p pipe_name
 
 
+8 - create comp
+
+ng g c comp_name
+
+
+9 - create a route guard
+
+ng g g guard_name
+
+
+
+
+
+
