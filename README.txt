@@ -43,6 +43,11 @@ ng g c comp_name
 ng g g guard_name
 
 
+10 - create service
+
+ng g s service_name
+
+
 
 
 
