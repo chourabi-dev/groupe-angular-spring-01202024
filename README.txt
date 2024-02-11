@@ -49,6 +49,11 @@ ng g s service_name
 
 
 
+/********************************* SERVER
+
+https://docs.spring.io/spring-data/jpa/reference/jpa/query-methods.html
+
+
 
 
 
