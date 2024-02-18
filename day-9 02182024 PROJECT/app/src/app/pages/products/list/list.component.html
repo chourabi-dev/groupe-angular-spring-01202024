@@ -1,0 +1,53 @@
+<div class="container mt-5">
+    <h3>List of products</h3>
+    <a routerLink="/products/new" class="btn btn-primary"> Add new product</a>
+</div>
+
+<div class="mt-5">
+    <div class="container">
+        <div class="text-center" *ngIf="loading == true">
+            <p class="text-center">
+                Please wait...
+            </p>
+        </div>
+        <div>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Product</th>
+                        <th>Price</th>
+                        <th>Quantity</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let p of products">
+                        <td>N°{{ p.id }}</td>
+                        <td>{{ p.product }}</td>
+                        <td>{{ p.price | currency }}</td>
+                        <td>{{ p.quantity | number }}</td>
+                        <td>
+                            <a class="btn btn-sm btn-secondary me-3"  [routerLink]=" '/products/edit/' + p.id" >Edit</a>
+                            
+                            <button class="btn btn-sm btn-danger "  (click)="deleteProduct(p.id)" >Delete</button>
+                            
+                        </td>
+                        
+                        
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <strong>Total:</strong>
+                        </td>
+                        <td colspan="4" class="text-center">
+                            {{ somme | currency }}
+                        </td>
+                    </tr>
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
